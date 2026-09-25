@@ -1,11 +1,10 @@
 # Mit KI arbeiten
 
-<p class="vorspann">Nicht schneller tippen. Ein System führen und sein Ergebnis abnehmen
-können — und wissen, woran die eigene Prüfung schon gescheitert ist.</p>
+<p class="vorspann">Wie ich vorgehe, woher das Verfahren stammt und wo seine Grenze
+liegt.</p>
 
 Seit Februar 2026 arbeite ich durchgehend mit einem KI-System. Was dabei entstanden ist,
-steht unter [Arbeiten](projekte.md). Diese Seite handelt nicht davon, **dass** ich das tue,
-sondern **wie** — denn das erste ist inzwischen verbreitet und das zweite selten.
+steht unter [Arbeiten](projekte.md). Hier geht es um das Vorgehen.
 
 ## Das Grundproblem
 
@@ -34,7 +33,7 @@ funktionierte — und war die Falle. Das Verfahren optimierte mit der Zeit heiml
 Grammatik-Maschine: auf die Oberfläche der Rückübersetzung statt auf die dahinterliegende
 Bedeutung. **Das Mass war zum Magneten geworden.**
 
-Das ist Goodharts Gesetz, und es hat mich mehr gelehrt als jedes gelungene Projekt: Sobald
+Das ist Goodharts Gesetz: Sobald
 ein Mass zum Ziel wird, verdirbt es als Mass. Für KI-Systeme ist der Effekt katalogisiert
 und quantifiziert — Optimierung auf ein unvollkommenes Mass verbessert die wahre Leistung
 nur bis zu einem kritischen Punkt, danach verschlechtert sie sie.

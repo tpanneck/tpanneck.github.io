@@ -1,14 +1,8 @@
 # Arbeiten
 
-<p class="vorspann">Elf Vorhaben seit Februar 2026, in vier Fächern. Alle unter eigener
-Führung entstanden, keines allein getippt. Was sie verbindet, ist nicht das Thema, sondern
-das Verfahren.</p>
-
-<div class="kacheln" markdown="0">
-  <div class="kachel"><span class="zahl">2 155</span><span class="was">Commits seit 23. Februar 2026</span></div>
-  <div class="kachel"><span class="zahl">11</span><span class="was">Vorhaben, neben einer vollen Stelle</span></div>
-  <div class="kachel"><span class="zahl">4</span><span class="was">Fächer: Software, Sicherheit, Sprache, Finanzen</span></div>
-</div>
+<p class="vorspann">Elf Vorhaben seit Februar 2026, in vier Fächern: Software und
+Infrastruktur, Sicherheit, Sprache, Finanzen. Entworfen und abgenommen, nicht Zeile für
+Zeile getippt — die Umsetzung lief KI-gestützt.</p>
 
 !!! note "Warum hier keine Codezeilen stehen"
     Sie liessen sich ausweisen und wären beeindruckend. Aber in einer Auszählung des
@@ -105,9 +99,9 @@ modelliert — Homer im Altgriechischen, mit eigener Übersetzung —, und Über
 nicht Voraussetzung, sondern **Befund**: Greift die Dekorator-Klasse der Zielsprache, was
 die der Quellsprache trägt, oder nicht? Das Nicht-Greifen ist die Messung.
 
-**Warum das hier steht und nicht unter «Hobbys».** Dieses Vorhaben ist der Ursprung des
-Verfahrens, nach dem ich heute alles andere prüfe — gefunden an seinem eigenen Scheitern.
-Mehr dazu unter [Mit KI arbeiten](mit-ki-arbeiten.md).
+Aus diesem Vorhaben stammt das Verfahren, nach dem ich heute auch alles andere prüfe —
+gefunden an seinem eigenen Scheitern. Mehr dazu unter
+[Mit KI arbeiten](mit-ki-arbeiten.md).
 
 ### probanz-werkstatt
 
@@ -133,12 +127,11 @@ solche auszuweisen, statt eine davon zur Wahrheit zu erklären.
 
 <p class="privat">Interne Fassung.</p>
 
-## Und das Verbindende
+## Das Verbindende
 
-Vier Fächer, die fachlich nichts miteinander zu tun haben — Berechtigungssysteme,
-Cybersicherheit, altgriechische Semantik, kommunale Finanzen. Was sie verbindet, ist die
-Bauweise: eine Behauptung gilt erst, wenn eine Maschine sie prüft; jede Verwandlung
-deklariert eine prüfbare Invariante; und wer ein Mass zum Ziel macht, verdirbt es als Mass.
+Berechtigungssysteme, Cybersicherheit, altgriechische Semantik und kommunale Finanzen haben
+fachlich nichts miteinander zu tun. Gemeinsam ist ihnen die Bauweise: Eine Behauptung gilt
+erst, wenn eine Maschine sie prüft; jede Verwandlung deklariert eine prüfbare Invariante;
+und ein Mass, das zum Ziel wird, taugt nicht mehr als Mass.
 
-Das ist keine Werkzeugkenntnis. Es ist ein Verfahren, und wo es herkommt, steht auf der
-[nächsten Seite](mit-ki-arbeiten.md).
+Woher das kommt, steht auf der [nächsten Seite](mit-ki-arbeiten.md).
