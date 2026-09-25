@@ -1,7 +1,7 @@
 site_name: Thorsten Panneck-Conradi
 site_description: >-
-  Plattform, Architektur und Integration in regulierten Umgebungen — und die
-  Frage, wie sich Arbeit zuschneidet, wenn ein Teil des Erzeugens wegfällt.
+  Projekte aus Plattform, Architektur, Sicherheit und Sprache — und wie sie
+  entstanden sind. Der Lebenslauf steht anderswo.
 site_url: https://tpanneck.github.io/
 site_author: Thorsten Panneck-Conradi
 copyright: Thorsten Panneck-Conradi · Ittigen bei Bern
@@ -69,7 +69,6 @@ markdown_extensions:
 
 nav:
   - Start: index.md
-  - Werdegang: werdegang.md
-  - Arbeiten: projekte.md
+  - Projekte: projekte.md
   - Mit KI arbeiten: mit-ki-arbeiten.md
   - Geschrieben: schreiben.md
