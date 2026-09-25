@@ -1,0 +1,171 @@
+/* Eigene Schicht über dem Material-Theme.
+   Ziel: Es soll nach einer Person aussehen, nicht nach einer API-Dokumentation.
+   Deshalb ruhigere Farben, mehr Luft, und eine Auszeichnung für Zahlen. */
+
+:root {
+  --tpc-tinte:   #24302f;
+  --tpc-gedeckt: #6d7a78;
+  --tpc-linie:   #dfe4e2;
+  --tpc-grund:   #fbfaf7;
+  --tpc-karte:   #ffffff;
+  --tpc-akzent:  #1f6f5c;
+}
+
+[data-md-color-scheme="slate"] {
+  --tpc-tinte:   #e6eae8;
+  --tpc-gedeckt: #9aa6a3;
+  --tpc-linie:   #33403e;
+  --tpc-grund:   #1a2322;
+  --tpc-karte:   #212c2b;
+  --tpc-akzent:  #6fc0a8;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: var(--tpc-grund);
+  --md-typeset-color: var(--tpc-tinte);
+}
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--tpc-grund);
+  --md-typeset-color: var(--tpc-tinte);
+}
+
+.md-typeset {
+  font-size: .78rem;
+  line-height: 1.68;
+}
+
+/* Fliesstext soll nicht über die ganze Breite laufen. */
+.md-typeset p,
+.md-typeset ul,
+.md-typeset ol,
+.md-typeset blockquote {
+  max-width: 40em;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -.012em;
+  color: var(--tpc-tinte);
+  margin-bottom: .3em;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  margin-top: 2.2em;
+  padding-top: .8em;
+  border-top: 1px solid var(--tpc-linie);
+  color: var(--tpc-tinte);
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--tpc-akzent);
+  margin-top: 1.7em;
+}
+
+/* Der Vorspann jeder Seite: eine Zeile, die sagt, worum es geht. */
+.vorspann {
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--tpc-gedeckt);
+  max-width: 34em;
+  margin: .2rem 0 2.2rem;
+}
+
+/* Zahlenkacheln. Werden nur dort eingesetzt, wo die Zahl selbst das
+   Argument ist — nicht als Schmuck über jedem Abschnitt. */
+.kacheln {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: .9rem;
+  margin: 1.6rem 0 2rem;
+  max-width: 44em;
+}
+
+.kachel {
+  background: var(--tpc-karte);
+  border: 1px solid var(--tpc-linie);
+  border-radius: 3px;
+  padding: .85rem .95rem;
+}
+
+.kachel .zahl {
+  display: block;
+  font-size: 1.42rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--tpc-akzent);
+  font-variant-numeric: tabular-nums;
+}
+
+.kachel .was {
+  display: block;
+  font-size: .68rem;
+  line-height: 1.4;
+  color: var(--tpc-gedeckt);
+  margin-top: .25rem;
+}
+
+/* Stationen im Werdegang: Jahreszahl links, Inhalt rechts. */
+.md-typeset .station {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0 1.4rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--tpc-linie);
+  max-width: 46em;
+}
+
+.md-typeset .station .zeit {
+  font-size: .72rem;
+  color: var(--tpc-gedeckt);
+  font-variant-numeric: tabular-nums;
+  padding-top: .18rem;
+}
+
+.md-typeset .station .rolle {
+  font-weight: 600;
+  margin: 0 0 .2rem;
+  max-width: none;
+}
+
+.md-typeset .station .haus {
+  font-size: .74rem;
+  color: var(--tpc-gedeckt);
+  margin: 0 0 .5rem;
+  max-width: none;
+}
+
+.md-typeset .station p:last-child {
+  margin-bottom: 0;
+  max-width: none;
+}
+
+@media screen and (max-width: 44em) {
+  .md-typeset .station {
+    grid-template-columns: 1fr;
+    gap: .35rem;
+  }
+}
+
+/* Tabellen ruhiger stellen. */
+.md-typeset table:not([class]) {
+  font-size: .72rem;
+  border: 1px solid var(--tpc-linie);
+}
+
+.md-typeset table:not([class]) th {
+  background: transparent;
+  font-weight: 600;
+  color: var(--tpc-gedeckt);
+}
+
+/* Der Hinweis, dass ein Repositorium privat ist. */
+.md-typeset .privat {
+  font-size: .68rem;
+  color: var(--tpc-gedeckt);
+  border-left: 2px solid var(--tpc-linie);
+  padding-left: .7rem;
+  margin: .6rem 0 1.4rem;
+  max-width: 40em;
+}
