@@ -20,7 +20,12 @@ Hand in `gh-pages` ändern — der Zweig wird beim Veröffentlichen überschrieb
 ```bash
 python3 -m mkdocs serve          # lokal unter http://127.0.0.1:8000
 python3 -m mkdocs build --strict # baut nach site/, bricht bei Warnungen ab
+python3 pruefe-oeffentlich.py    # das Gate: elf Muster gegen den gebauten Bestand
 ```
+
+`pruefe-oeffentlich.py` läuft **vor** jedem Veröffentlichen. Es prüft den gebauten Bestand
+unter `site/`, nicht die Quelle — ausgeliefert wird das HTML. Beendet mit 1, wenn etwas
+gefunden wurde.
 
 ## Veröffentlichen
 
@@ -38,6 +43,9 @@ nicht angefasst — die committet und pusht man wie gewohnt.
   in einer Auszählung des Bestands erzeugte Dateien mitzählen würden.
 - **Keine Arbeitgeber-Interna.** Keine Namen von Ansprechpersonen, keine Lohnklassen, keine
   vertraulichen Projektdetails, nichts aus laufenden Verfahren.
-- **Keine Wohnadresse, keine Telefonnummer.** Kontakt läuft über E-Mail.
+- **Keine Kontaktangaben.** Keine E-Mail-Adresse, keine Telefonnummer, keine Wohnadresse,
+  keine Verfügbarkeit und kein Pensum. Die Seite ist ein Nachschlagewerk für Leute, die den
+  Weg ohnehin schon haben — kein Formular für Fremde. Wer die Seite bekommt, bekommt sie
+  von Thorsten, und damit auch die Adresse.
 - **Private Repositorien werden beschrieben, nicht verlinkt.** Tote Links auf private
   Repositorien sehen schlechter aus als eine ehrliche Zeile.

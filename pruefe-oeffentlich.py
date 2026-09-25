@@ -40,6 +40,11 @@ VERBOTEN = [
      "Pfade dieser Maschine gehoeren nicht ins Netz."),
     ("Zugangsdaten", r"(?i)\b(token|passwort|password|api[_-]?key|secret)\b\s*[:=]",
      "Offensichtlich."),
+    ("E-Mail-Adresse", r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|mailto:",
+     "Ausdruecklich nicht auf diese Seite. Die Adresse geben wir selbst weiter."),
+    ("Verfuegbarkeit", r"(?i)\bverf(ü|ue)gbar\b|ab Januar 20\d\d|"
+                       r"\b\d{2}\s?(bis|–|-)\s?\d{2}\s?Prozent\b|\b\d{2}–\d{3}\s?%",
+     "Kein Datum, kein Pensum — das gehoert ins Gespraech, nicht ins Netz."),
 ]
 
 # Was ausdruecklich erlaubt ist, obwohl ein Muster greifen koennte.
