@@ -12,7 +12,7 @@ Zeile getippt — die Umsetzung lief KI-gestützt.</p>
 
 ## Software und Infrastruktur
 
-### lingdeem-node — ein Knoten, der Berechtigungen lokal beantwortet
+### lingdeem-node — ein Knoten, der Berechtigungen lokal beantwortet { #lingdeem-node }
 
 **458 Commits, 30. August bis 21. September 2026. OCaml.**
 
@@ -36,14 +36,14 @@ tote Knoten noch in der Konfiguration standen und kein Quorum mehr bestand. Ein 
 der nur liest, gibt genau in diesem Fall falsche Entwarnung. Behoben nicht durch Disziplin,
 sondern mechanisch, mit Gegenprobe am selben Abend.
 
-### federation-rt — Container-Laufzeit mit Beweisen
+### federation-rt — Container-Laufzeit mit Beweisen { #federation-rt }
 
 **289 Commits in sieben Tagen, März 2026. OCaml und Rocq.**
 
 Eine Laufzeitumgebung für Container, deren Isolationseigenschaften nicht behauptet, sondern
 in Rocq bewiesen werden.
 
-### cloud-arbeit und infra — Plattform und ihre Grundlage
+### cloud-arbeit und infra — Plattform und ihre Grundlage { #cloud-arbeit }
 
 **446 und 218 Commits, Juni bis September 2026.**
 
@@ -51,7 +51,7 @@ Anforderungen und Dokumentation einer Plattform, dazu deren Infrastruktur als Co
 OpenTofu für die Beschaffung, Ansible für die Einrichtung, mit Zustandstrennung,
 Netzsegmentierung und Zugangsregeln als versionierte Artefakte.
 
-### claude-remote — Werkbank für die Zusammenarbeit
+### claude-remote — Werkbank für die Zusammenarbeit { #claude-remote }
 
 **152 Commits, August bis September 2026. Clojure und Babashka.**
 
@@ -64,7 +64,7 @@ Anfrage, in einem Gespräch gern im Detail.</p>
 
 ## Sicherheit
 
-### cybersicherheit — ein deutschsprachiges Feldwerk
+### cybersicherheit — ein deutschsprachiges Feldwerk { #cybersicherheit }
 
 **176 Seiten, rund 234 700 Wörter, 72 Commits — in drei Tagen, 21. bis 23. September 2026.**
 
@@ -85,7 +85,7 @@ Vorbereitung.</p>
 
 ## Sprache
 
-### meaning-layer — was unter der Sprache liegt
+### meaning-layer — was unter der Sprache liegt { #meaning-layer }
 
 **208 Commits, Juni bis September 2026. Clojure.**
 
@@ -103,14 +103,14 @@ Aus diesem Vorhaben stammt das Verfahren, nach dem ich heute auch alles andere p
 gefunden an seinem eigenen Scheitern. Mehr dazu unter
 [Mit KI arbeiten](mit-ki-arbeiten.md).
 
-### probanz-werkstatt
+### probanz-werkstatt { #probanz-werkstatt }
 
 **21 Commits, Juni bis September 2026.** Offene Forschungswerkstatt zur Vermessung von
 Wirklichkeit im Sprachgebrauch.
 
 ## Finanzen und Verwaltung
 
-### kita-studie — was öffentliche Kinderbetreuung kostet
+### kita-studie — was öffentliche Kinderbetreuung kostet { #kita-studie }
 
 **67 Seiten, rund 211 000 Wörter, 127 Commits — in fünf Tagen, 19. bis 23. September 2026.**
 
