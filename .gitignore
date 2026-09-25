@@ -1,0 +1,6 @@
+# Die gebaute Seite gehoert nicht in den Quellzweig — sie entsteht beim
+# Veroeffentlichen neu und liegt dann im Zweig gh-pages.
+site/
+.cache/
+__pycache__/
+*.pyc

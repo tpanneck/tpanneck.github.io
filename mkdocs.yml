@@ -1,0 +1,76 @@
+site_name: Thorsten Panneck-Conradi
+site_description: >-
+  Plattform, Architektur und Integration in regulierten Umgebungen — und die
+  Frage, wie sich Arbeit zuschneidet, wenn ein Teil des Erzeugens wegfällt.
+site_url: https://tpanneck.github.io/
+site_author: Thorsten Panneck-Conradi
+copyright: Thorsten Panneck-Conradi · Ittigen bei Bern
+
+theme:
+  name: material
+  language: de
+  font:
+    text: Source Sans 3
+    code: JetBrains Mono
+  icon:
+    logo: material/hexagon-outline
+  palette:
+    # Die Seite folgt der Systemeinstellung; beide Fassungen sind gesetzt,
+    # keine erbt die Grundfarbe vom Wirt.
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Dunkle Fassung
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Helle Fassung
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - toc.follow
+
+extra_css:
+  - stylesheets/eigenes.css
+
+extra:
+  social:
+    - icon: material/email
+      link: mailto:tconradi@pm.me
+      name: E-Mail
+  generator: false
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.smartsymbols
+  - pymdownx.caret
+  - pymdownx.mark
+
+nav:
+  - Start: index.md
+  - Werdegang: werdegang.md
+  - Arbeiten: projekte.md
+  - Mit KI arbeiten: mit-ki-arbeiten.md
+  - Geschrieben: schreiben.md
+  - Kontakt: kontakt.md
