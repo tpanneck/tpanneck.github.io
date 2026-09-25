@@ -62,10 +62,20 @@ offene Frage, die ich ehrlich als offen führe. Beides steht unter
 
 </div>
 
-## Wo ich gerade stehe
+## Woran ich gerne arbeite
 
-Ich orientiere mich beruflich neu und bin ab Januar 2027 verfügbar — für Architektur-,
-Plattform- oder Gestaltungsrollen, am liebsten dort, wo eine Organisation etwas aufbaut
-statt etwas verwaltet. Region Bern, zwei Amtssprachen und Englisch.
+An der Stelle, an der eine technische Entscheidung und eine organisatorische zusammenfallen:
+Zielarchitekturen, die tatsächlich umgesetzt werden; Sicherheitsvorgaben, die ein Haus
+tragen kann; und die Frage, wie sich Arbeit zuschneidet, wenn ein Teil des Erzeugens
+wegfällt. Am liebsten dort, wo eine Organisation etwas aufbaut statt etwas verwaltet.
 
-[Kontakt aufnehmen](kontakt.md){ .md-button .md-button--primary }
+Der Code der hier beschriebenen Vorhaben liegt in privaten Repositorien. Im Gespräch gehe
+ich gern ins Detail — an einem Messprotokoll, an einem Gate-Katalog oder an einem Fehler,
+den ich gemacht habe.
+
+## Über diese Seite
+
+Sie ist selbst nach dem Verfahren entstanden, das unter
+[Mit KI arbeiten](mit-ki-arbeiten.md) beschrieben ist: entworfen, geführt und abgenommen,
+nicht Zeile für Zeile getippt. Alle Zahlen darauf sind aus der Versionsverwaltung
+abgelesen, nicht geschätzt — und wo eine Zahl nicht zu verteidigen wäre, steht sie nicht da.
