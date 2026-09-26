@@ -1,47 +1,61 @@
 # Thorsten Panneck-Conradi
 
-<p class="vorspann">Ein paar Sachen, die abends und an Wochenenden entstanden sind, seit ich
-mit einem KI-System arbeite. Kein Lebenslauf — der steht auf LinkedIn.</p>
+<p class="vorspann">Hier stehen Verweise auf Sachen, die ich seit Februar 2026 geschrieben
+habe. Alle sind öffentlich zugänglich, alle sind mit einem KI-System entstanden. Wenn
+eines der Themen jemanden interessiert: Der Inhalt ist da und darf benutzt werden.</p>
 
-Seit Februar 2026 baue ich Dinge zusammen mit einem KI-System: ich entwerfe, das System
-setzt um, ich nehme ab. Was dabei herauskommt, sind Versuche — keine Produkte, nichts
-davon ist im Einsatz. Aber man lernt beim Bauen mehr als beim Lesen, und einiges davon ist
-vielleicht auch für andere brauchbar.
+Ich arbeite in der Informatik, seit 1998, seit 2013 in der Schweiz. Den Lebenslauf gibt
+es auf LinkedIn; hier geht es um die Inhalte.
 
-## Was hier steht
+## Die Seiten
 
-<div class="grid cards" markdown>
+### [Cybersicherheit](https://tpanneck.github.io/cybersicherheit/)
 
--   **[claude-remote](projekte.md#claude-remote)**
+Ein Nachschlagewerk auf Deutsch, von der Lage über Technik und Erkennung bis zu Betrieb
+und Ausbildung. Entstanden, weil ich beim Suchen nichts gefunden habe, das das Feld
+durchgehend behandelt: Für das IT-Grundschutz-Kompendium gibt es ein deutschsprachiges
+Gegenstück zur NIST-Reihe, für MITRE ATT&CK nicht.
 
-    Eine kleine Werkbank, um von überall mit dem KI-System zu arbeiten und zu sehen, was
-    gerade läuft.
+### [meaning-layer](https://tpanneck.github.io/meaning-layer/)
 
--   **[lingdeem-node](projekte.md#lingdeem-node)**
+Ein Modell, das Bedeutung in zwei Schichten zerlegt: körpernahe Grundoperationen, die
+allen Sprachen gemeinsam sind, und sprachspezifische Dekoratoren darüber. Erprobt an
+Homer, Odyssee XII, mit eigener Übersetzung. Methode, Befunde und eine Demo sind auf der
+Seite.
 
-    Ein Versuch, Berechtigungsfragen lokal zu beantworten statt zentral. Mit Messwerten —
-    und mit einem Prüflauf, der grün meldete und falsch lag.
+### [lingdeem-node](https://tpanneck.github.io/lingdeem-node/)
 
--   **[cybersicherheit](projekte.md#cybersicherheit)**
+Ein Cloud-Knoten, der Berechtigungsfragen lokal beantwortet statt zentral. Mit
+Messprotokoll: Entscheidungsgleichheit gegen die zentrale Referenz, Latenz eines
+Rechtsentzugs, Verhalten bei Quorumsverlust.
 
-    Eine Sammlung zum Thema, auf Deutsch. Entstanden, weil ich selbst nichts gefunden
-    habe, das durchgehend war.
+### [lingdeem.os v2](https://tpanneck.github.io/federation-rt/)
 
--   **[meaning-layer](projekte.md#meaning-layer)**
+Eine Laufzeitumgebung für Container in OCaml, deren Isolationseigenschaften in Rocq
+bewiesen sind.
 
-    Ein Modell dafür, was an Bedeutung der Körper erzwingt und was die Kultur auflegt.
-    Ausprobiert an Homer.
+### [Nomos-Werkstatt](https://tpanneck.github.io/nomos-werkstatt/)
 
-</div>
+Arbeitswissen zur Frage, wie geteilte Wirklichkeit entsteht, zerfällt und messbar wird.
 
-[Alle Projekte](projekte.md){ .md-button } [Wie ich dabei vorgehe](mit-ki-arbeiten.md){ .md-button }
+### [Die Welten der Wörter](https://tpanneck.github.io/probanz-werkstatt/)
 
-## Wozu
+Eine Werkstatt dazu, wie Sprache Welten aufspannt — Wort für Wort.
 
-Die Arbeitsweise ändert sich gerade, und ich wollte verstehen, was sich dabei tatsächlich
-verschiebt — nicht aus Artikeln, sondern durch Bauen. Die kurze Antwort: Der Aufwand
-wandert vom Erzeugen zum Prüfen. Was das praktisch heisst, steht unter
-[Mit KI arbeiten](mit-ki-arbeiten.md), zusammen mit den Stellen, an denen ich mich geirrt
-habe.
+### [EasyGov 2.0 — eine Auslegeordnung](https://tpanneck.github.io/easygov/)
 
-Der Code liegt in privaten Repositorien. Im Gespräch zeige ich gern etwas davon.
+Eine Studie zur Schweizer Verwaltungsdigitalisierung, ausschliesslich aus öffentlich
+zugänglichen Quellen.
+
+### [Die Ameisen von morgen](https://tpanneck.github.io/ameisen-von-morgen/)
+
+Ein Buch in Arbeit: Alles, was man für wirklich hält, ist eine Geschichte — und jetzt
+betritt ein neuer Geschichtenerzähler die Bühne.
+
+## Wie das entstanden ist
+
+Alle diese Seiten sind mit einem KI-System gebaut. Ich entwerfe und entscheide, das
+System setzt um, ich prüfe und nehme ab. Diese Seite hier auch.
+
+Was mir dabei auffällt und was ich mir dazu überlege, steht unter
+[Mit KI arbeiten](mit-ki-arbeiten.md).
