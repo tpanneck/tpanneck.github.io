@@ -52,6 +52,12 @@ VERBOTEN = [
      "Kein Datum, kein Pensum — das gehoert ins Gespraech, nicht ins Netz."),
     ("Kita-Studie", r"(?i)\bkita\b|Kinderbetreuung",
      "Ausdruecklich nicht erwaehnen."),
+    # Die Seite ist nicht von Thorsten geschrieben, sondern fuer ihn. Eine
+    # Ich-Form waere eine geliehene Stimme — sie stand in den ersten Fassungen
+    # durchgehend drin und war falsch. Drittperson oder unpersoenlich.
+    ("Ich-Form", r"(?<![\w-])([Ii]ch|[Mm]ein[ers]?|[Mm]einen|[Mm]einem|[Mm]ir|[Mm]ich)"
+                 r"(?![\w-])",
+     "Die Seite spricht ueber Thorsten, nicht als Thorsten."),
     ("Lebenslauf-Inhalte", r"(?i)\b(Diplom Physik|Universität Bremen|RPTU|PRINCE2|IREB|"
                            r"HERMES|SAFe Product Owner|Worldline|BKW|ti&amp;m|"
                            r"Deutsche Telekom|Visio Consult|Lebenslaufstation)\b",
