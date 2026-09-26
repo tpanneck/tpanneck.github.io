@@ -1,128 +1,95 @@
 # Mit KI arbeiten
 
-<p class="vorspann">Wie ich vorgehe, woher das Verfahren stammt und wo seine Grenze
-liegt.</p>
+<p class="vorspann">Wie ich vorgehe, woher das kommt und wo es nicht weitergeht.</p>
 
-Seit Februar 2026 arbeite ich durchgehend mit einem KI-System. Was dabei entstanden ist,
-steht unter [Arbeiten](projekte.md). Hier geht es um das Vorgehen.
+Seit Februar 2026 arbeite ich durchgehend mit einem KI-System. Ich entwerfe, das System
+setzt um, ich nehme ab. Das ist kein Werkzeugtrick, sondern eine Umstellung, die etwas
+kostet — und der Preis liegt woanders, als ich erwartet hatte.
 
-## Das Grundproblem
+## Was sich verschiebt
 
-Moderne Modelle erzeugen mühelos Ergebnisse, die *richtig aussehen*. Das ist ihre Stärke
-und ihr zentrales Risiko: **Der Prüfaufwand verschiebt sich vom Erzeugen zum Abnehmen.**
-Wer KI-Tempo mit klassischer Stichproben-Abnahme kombiniert, produziert schnellen,
-ungeprüften Bestand — in einem regulierten Umfeld ist das kein Effizienzgewinn, sondern ein
-Risiko.
+Moderne Modelle erzeugen mühelos Ergebnisse, die *richtig aussehen*. Das ist praktisch und
+zugleich das Problem: **Der Aufwand wandert vom Erzeugen zum Abnehmen.** Wer das Tempo
+mitnimmt und beim Prüfen bleibt wie vorher, sammelt schnell viel Ungeprüftes an.
 
-Daraus folgt der Satz, um den sich meine ganze Arbeitsweise dreht:
+Die Konsequenz, bei der ich gelandet bin:
 
-> AI-Workflows werden nicht über das Erzeugen gesteuert, sondern über das Prüfen. Jede
-> Etappe endet an einem Gate, das maschinell und beweisbar feststellt, ob das Ergebnis
-> trägt — Plausibilität genügt nie.
+> Jede Etappe endet an einem Gate, das maschinell feststellt, ob das Ergebnis trägt.
+> Plausibilität genügt nicht.
 
-Ein Gate ist dabei wörtlich zu nehmen: eine Schranke. Öffnet sie sich nicht, geht es nicht
-weiter. Ein Gate, das nur berichtet, ist kein Gate.
+Ein Gate ist dabei wörtlich gemeint: eine Schranke. Öffnet sie sich nicht, geht es nicht
+weiter. Ein Gate, das nur berichtet, ist keins.
 
-## Woher das Verfahren kommt
+## Woher das kommt
 
-Nicht aus der Informatik. **Aus der Linguistik — und aus einem Fehlschlag.**
+Nicht aus der Informatik, sondern aus einem missglückten Versuch mit Sprache.
 
-Die erste Fassung meines Sprachmodells (`meaning-layer` v0.1) prüfte sich selbst, indem sie
-altgriechische Modelle ins Deutsche zurückübersetzte und mit dem Original verglich. Das
-funktionierte — und war die Falle. Das Verfahren optimierte mit der Zeit heimlich auf eine
-Grammatik-Maschine: auf die Oberfläche der Rückübersetzung statt auf die dahinterliegende
-Bedeutung. **Das Mass war zum Magneten geworden.**
+Die erste Fassung des [meaning-layer](projekte.md#meaning-layer) prüfte sich selbst, indem
+sie altgriechische Modelle ins Deutsche zurückübersetzte und mit dem Original verglich.
+Das funktionierte — und war die Falle. Mit der Zeit optimierte das Verfahren auf die
+Oberfläche der Rückübersetzung statt auf die Bedeutung dahinter. Das Mass war zum Ziel
+geworden und taugte damit nicht mehr als Mass.
 
-Das ist Goodharts Gesetz: Sobald
-ein Mass zum Ziel wird, verdirbt es als Mass. Für KI-Systeme ist der Effekt katalogisiert
-und quantifiziert — Optimierung auf ein unvollkommenes Mass verbessert die wahre Leistung
-nur bis zu einem kritischen Punkt, danach verschlechtert sie sie.
+Das ist Goodharts Gesetz, und für KI-Systeme ist der Effekt gut dokumentiert: Optimierung
+auf ein unvollkommenes Mass verbessert die tatsächliche Leistung nur bis zu einem Punkt,
+danach verschlechtert sie sie.
 
-Aus dieser Erfahrung sind die Prinzipien entstanden, die ich später verallgemeinert und
-aufgeschrieben habe.
+## Sechs Prinzipien
 
-## Sechs Prinzipien, siebzehn Gates
-
-Das Diskussionspapier [«Verifikationsgetriebene AI-Workflows»](schreiben.md) hält fest, was
-sich in der Praxis gehalten hat:
+Aus dieser und ein paar anderen Erfahrungen ist ein Diskussionspapier entstanden,
+**«Verifikationsgetriebene AI-Workflows»** (Juli 2026, rund 6 500 Wörter, extern
+begutachtet). Die Prinzipien darin:
 
 1. **Gate-Kette statt Vertrauenskette** — jede Etappe endet an einer maschinellen Schranke.
-2. **Skripte statt Chat-Schleifen** — was wiederholbar sein soll, wird Code, nicht Dialog.
+2. **Skripte statt Chat-Schleifen** — was wiederholbar sein soll, wird Code.
 3. **Verfahrenstreue im Lauf** — das Verfahren ist versioniert und wird nicht unterwegs
-   angepasst, damit das Ergebnis vergleichbar bleibt.
+   angepasst.
 4. **Adversariale Prüfung als Standard** — der Prüfer sucht den Fehler, nicht die
    Bestätigung.
 5. **Zurechnung und Spur** — jedes Artefakt weiss, woraus es entstanden ist.
-6. **Messen, was wirklich trägt** — Ablations-Messung statt Etiketten wie «wichtig».
+6. **Messen, was wirklich trägt** — Ablations-Messung statt Etiketten.
 
-Dazu ein Katalog von siebzehn Gates, hergeleitet aus einem Korpus tatsächlicher Vorfälle.
+Dazu ein Katalog von siebzehn Gates. Das Papier schicke ich auf Anfrage.
 
-## Drei Fehlschläge, an denen es sich zeigt
+## Drei Sachen, die schiefgingen
 
-Ein Verfahren ist nur so glaubwürdig wie die Fehler, über die man Auskunft geben kann.
+### Der grüne Prüfbericht
 
-### Der grüne Prüfbericht, der falsch war
+Der erste Rotationslauf von [lingdeem-node](projekte.md#lingdeem-node) meldete 852
+erfolgreiche Anfragen und null Fehler. Er prüfte nur lesend, während drei tote Knoten in
+der Konfiguration standen und kein Quorum mehr bestand. Ein Prüfer, der nur liest, gibt
+genau in diesem Fall falsche Entwarnung.
 
-Der erste Rotationslauf des Knotens meldete 852 erfolgreiche Anfragen und null Fehler. Er
-prüfte nur lesend, während drei tote Knoten in der Konfiguration standen und kein Quorum
-mehr bestand. **Ein Prüfer, der nur liest, gibt genau in diesem Fall falsche Entwarnung.**
-Behoben mechanisch, nicht durch Vorsatz, mit Gegenprobe am selben Abend.
+### Zwei Stellen mit demselben blinden Fleck
 
-### Der Geist in der Oberfläche
+Ein Teilprozess, der nie gestartet war, stand zwölf Minuten als «läuft» in der Anzeige.
+Zählweg und Oberfläche hatten dieselbe Lücke; die Nachfrage alle fünf Sekunden bestätigte
+den Fehler, statt ihn auszuräumen. Gefunden hat das nicht mein Nachdenken, sondern eine
+Beispieldatei — und die musste sich dabei selbst korrigieren, weil sie zuerst so aussah,
+wie ich mir die Wirklichkeit vorstellte.
 
-Ein Subagent, der nie gestartet war, stand zwölf Minuten lang als «läuft» in der Anzeige.
-Der Zählweg öffnete den Eintrag beim Aufruf und schloss ihn nur bei einer Fertigmeldung —
-die für einen nie gestarteten Agenten nie kommt. Beide Enden, Zählweg und Oberfläche,
-hatten dieselbe Lücke. Deshalb half auch die Nachfrage alle fünf Sekunden nicht:
+### Das Mass, das nicht angepasst wurde
 
-> Zwei Stellen mit demselben blinden Fleck prüfen einander nicht, sie bestätigen einander.
+Eine Selbstmessung wies für einen Tag «0 von 10 Korrektur-Commits» aus, obwohl der Tag fast
+nur aus Korrekturen bestand — kein Commit-Titel passte auf den Suchausdruck. Die Versuchung
+war, den Suchausdruck zu weiten, bis die Zahl stimmt. Das wäre genau der Fehler von oben
+gewesen.
 
-Die erste Korrektur war zu grob und hätte aus einem Geist eine Leiche gemacht — ein
-laufender Agent wäre aus der Anzeige verschwunden. Gefunden hat das nicht mein Nachdenken,
-sondern eine Beispieldatei mit vier Fällen. Die musste sich dabei selbst korrigieren: Sie
-bildete eine Fertigmeldung so nach, wie ich sie mir vorstellte, nicht wie sie wirklich
-aussieht. **Eine Beispieldatei, die anders aussieht als die Wirklichkeit, prüft die
-Wirklichkeit nicht.**
+## Was das für Organisationen hiesse
 
-### Das Mass, das nicht ans Ergebnis angepasst wurde
+Dazu habe ich eine Meinung, aber keine Erfahrung aus dem Team:
 
-Die Selbstmessung der Kita-Studie wies für einen Tag «0 von 10 Korrektur-Commits» aus,
-obwohl dieser Tag fast nur aus Korrekturen bestand — kein Commit-Titel passte auf den
-Suchausdruck. Die Versuchung war, den Suchausdruck zu weiten, bis die Zahl stimmt. Das wäre
-das Anpassen des Masses an das gewünschte Ergebnis gewesen. Stattdessen steht der Fehlgriff
-jetzt als Beispiel auf der Seite selbst.
+- Die KI entscheidet nicht über Geltung. Sie extrahiert, schlägt vor, prüft — ob etwas gilt,
+  entscheidet der Mensch, und zwar eng und protokolliert, nicht als breite Aufsichtspflicht.
+- Der Betrieb solcher Verfahren wäre eher eine eigene Rolle als eine Nebenaufgabe.
+- Der Engpass ist dann nicht die Technik, sondern das menschliche Urteil.
 
-## Was daraus für Organisationen folgt
+## Wo es nicht weitergeht
 
-Das ist der Teil, der mich heute am meisten beschäftigt, und er ist keine technische Frage.
+Meine ganze Erfahrung stammt aus **Ein-Personen-Praxis mit voller Werkzeugfreiheit**. Wie
+sich das in ein arbeitsteiliges Team mit bestehenden Prozessen übersetzt, weiss ich nicht —
+das steht auch so im Papier, unter «Was wir nicht wissen».
 
-- **Die KI entscheidet nie über Geltung.** Sie extrahiert, schlägt vor, implementiert,
-  prüft — ob eine Regel gilt, entscheidet das Fach, als *enges, einzelfallbezogenes und
-  protokolliertes* menschliches Gate. Pauschale Pflichten zur «menschlichen Aufsicht»
-  werden empirisch regelmässig zur Legitimationsfassade, weil niemand die verlangte
-  Dauerkontrolle leisten kann.
-- **Der Betrieb solcher Verfahren ist eine Rolle, kein Nebenbei.** Verfahren versionieren,
-  Gates pflegen, Läufe fahren, Prüfungen ansetzen — so wie der Betrieb einer
-  Fertigungsstrasse ein eigenes Handwerk ist und keine Nebenaufgabe der Konstrukteure.
-- **Das menschliche Gate ist der Engpass, nicht die Technik.** Und dieser Engpass hat eine
-  Grössenordnung, die man aussprechen muss, sonst rechnet sich das Modell nie.
-- **Das Sitzungsarchiv gehört zur Akte.** Wer KI-gestützt arbeitet, erzeugt eine Spur, und
-  die ist Teil der Nachvollziehbarkeit.
-
-## Und die offene Frage, die ich als offen führe
-
-Meine ganze Evidenz stammt aus **Ein-Personen-plus-KI-Praxis mit voller Werkzeugfreiheit.**
-Das ist eine ehrliche Grenze, und sie steht auch so im Papier. Die erste der dort genannten
-offenen Fragen lautet:
-
-> Wie übersetzt sich die Gate-Disziplin in ein arbeitsteiliges Team mit bestehenden
-> Prozessen?
-
-Darauf habe ich keine erprobte Antwort. Ich habe eine Position, eine Menge Narben und den
-Wunsch, das dort weiterzuarbeiten, wo diese Grenze tatsächlich überschritten wird.
-
-Deshalb ist die Frage, die mich interessiert, auch nicht «welche Werkzeuge setzt ihr ein»,
-sondern:
-
-> **Wie wollen wir unsere Arbeit neu zuschneiden, wenn ein Teil des Erzeugens wegfällt und
-> dafür das Prüfen zur Hauptarbeit wird — und welche Vorstellung davon gibt es schon?**
+Die Frage, die mich deshalb interessiert, ist weniger, welche Werkzeuge jemand einsetzt,
+als: **Wie schneidet man Arbeit zu, wenn ein Teil des Erzeugens wegfällt und dafür das
+Prüfen zur Hauptarbeit wird?**

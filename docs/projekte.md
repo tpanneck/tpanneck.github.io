@@ -1,137 +1,96 @@
-# Arbeiten
+# Projekte
 
-<p class="vorspann">Elf Vorhaben seit Februar 2026, in vier Fächern: Software und
-Infrastruktur, Sicherheit, Sprache, Finanzen. Entworfen und abgenommen, nicht Zeile für
-Zeile getippt — die Umsetzung lief KI-gestützt.</p>
+<p class="vorspann">Nebenher entstanden, seit Februar 2026, alle mit einem KI-System
+gebaut. Versuche, keine Produkte.</p>
 
-!!! note "Warum hier keine Codezeilen stehen"
-    Sie liessen sich ausweisen und wären beeindruckend. Aber in einer Auszählung des
-    Bestands zählen erzeugte Dateien und Bauartefakte mit — bei zwei der Repositorien
-    ergäbe das über eine Million «Zeilen». Eine Zahl, die man nicht verteidigen kann,
-    entwertet den Rest. Commits und Kalendertage sind prüfbar, Zeilen sind es hier nicht.
+!!! note "Zu den Zahlen"
+    Wo Commits und Tage stehen, sind sie aus der Versionsverwaltung abgelesen. Codezeilen
+    stehen nirgends: In einer Auszählung des Bestands zählen erzeugte Dateien und
+    Bauartefakte mit, das gäbe Zahlen, die nichts bedeuten.
 
-## Software und Infrastruktur
+## claude-remote — eine Werkbank { #claude-remote }
 
-### lingdeem-node — ein Knoten, der Berechtigungen lokal beantwortet { #lingdeem-node }
+**152 Commits, August bis September 2026. Clojure und Babashka.**
+
+Broker, Connector und eine Weboberfläche, um von überall mit dem KI-System zu arbeiten und
+zu sehen, was gerade läuft. Entstanden aus einem praktischen Bedürfnis: Wer unterwegs eine
+Frage hat, möchte nicht erst einen Rechner aufklappen.
+
+Enthält die Regressionsproben zu einem Fehler, den ich lange nicht gesehen habe: Ein
+Teilprozess, der nie gestartet war, stand zwölf Minuten lang als «läuft» in der Anzeige.
+Zählweg und Oberfläche hatten dieselbe Lücke, deshalb half auch die Nachfrage alle fünf
+Sekunden nichts — zwei Stellen mit demselben blinden Fleck prüfen einander nicht.
+
+## lingdeem-node — Berechtigungen lokal beantworten { #lingdeem-node }
 
 **458 Commits, 30. August bis 21. September 2026. OCaml.**
 
 Ein Cloud-Knoten, der die Steuerungsebene repliziert mitträgt und Berechtigungsfragen
 lokal beantwortet, ohne Netzaufruf. Im Abbild steckt kein Geheimnis, nur der öffentliche
-Vertrauensanker; Identität und Rolle kommen beim Start von aussen. Gemessen gegen einen
-echten Bestand aus 43 Prinzipalen, 25 Rechten, 12 Rollen, 31 Ressourcen und 34 Bindungen:
+Vertrauensanker; Identität und Rolle kommen beim Start von aussen.
 
-| Messung | Ergebnis |
+Gemessen gegen einen Bestand aus 43 Prinzipalen, 25 Rechten, 12 Rollen und 34 Bindungen:
+
+| | |
 |:--|:--|
 | Entscheidungen gegen die zentrale Referenz | 712 von 712 identisch |
-| Lokale Autorisierung | rund 2 ms, ohne Netzaufruf |
-| Entzogenes Recht überall sichtbar | 87–111 ms, ohne Cache-Invalidierung |
+| Lokale Autorisierung | rund 2 ms |
+| Entzogenes Recht überall sichtbar | 87–111 ms |
 | Vierter Knoten tritt im Betrieb bei | auskunftsfähig nach 1,5–3,2 s |
-| Leader hart getötet | neuer Leader nach 1,7–2,8 s |
-| Quorum verloren (3 von 4 tot) | Lesen läuft weiter, Schreiben verweigert korrekt |
+| Quorum verloren (3 von 4 tot) | Lesen läuft weiter, Schreiben verweigert |
 
-**Und der Befund, der mehr wert ist als die Tabelle.** Der erste Rotationslauf meldete 852
-erfolgreiche Anfragen und null Fehler — und war falsch. Der Prüfer las nur, während drei
-tote Knoten noch in der Konfiguration standen und kein Quorum mehr bestand. Ein Prüfer,
-der nur liest, gibt genau in diesem Fall falsche Entwarnung. Behoben nicht durch Disziplin,
-sondern mechanisch, mit Gegenprobe am selben Abend.
+Wichtiger als die Tabelle ist, was daneben passiert ist: Der erste Rotationslauf meldete
+852 erfolgreiche Anfragen und null Fehler — und war falsch. Der Prüfer las nur, während
+drei tote Knoten in der Konfiguration standen und kein Quorum mehr bestand.
 
-### federation-rt — Container-Laufzeit mit Beweisen { #federation-rt }
+## cybersicherheit — eine Sammlung auf Deutsch { #cybersicherheit }
 
-**289 Commits in sieben Tagen, März 2026. OCaml und Rocq.**
+**176 Seiten, 72 Commits, September 2026.**
 
-Eine Laufzeitumgebung für Container, deren Isolationseigenschaften nicht behauptet, sondern
-in Rocq bewiesen werden.
-
-### cloud-arbeit und infra — Plattform und ihre Grundlage { #cloud-arbeit }
-
-**446 und 218 Commits, Juni bis September 2026.**
-
-Anforderungen und Dokumentation einer Plattform, dazu deren Infrastruktur als Code:
-OpenTofu für die Beschaffung, Ansible für die Einrichtung, mit Zustandstrennung,
-Netzsegmentierung und Zugangsregeln als versionierte Artefakte.
-
-### claude-remote — Werkbank für die Zusammenarbeit { #claude-remote }
-
-**152 Commits, August bis September 2026. Clojure und Babashka.**
-
-Broker, Connector und Weboberfläche, um die eigene KI-Arbeit von überall zu führen und zu
-beobachten. Enthält die Regressionsproben, die bei einem Fehler in der Agentenanzeige mehr
-gefunden haben als das Nachdenken — siehe [Mit KI arbeiten](mit-ki-arbeiten.md).
-
-<p class="privat">Der Code dieser Vorhaben liegt in privaten Repositorien. Einsicht auf
-Anfrage, in einem Gespräch gern im Detail.</p>
-
-## Sicherheit
-
-### cybersicherheit — ein deutschsprachiges Feldwerk { #cybersicherheit }
-
-**176 Seiten, rund 234 700 Wörter, 72 Commits — in drei Tagen, 21. bis 23. September 2026.**
-
-Ein Nachschlagewerk, das das Feld als Ganzes bewirtschaftet: von der Lage über Technik und
-Erkennung bis zu Betrieb und Befähigung einer Mannschaft. Angefangen, weil eine Durchsicht
-von zwölf deutschsprachigen Angeboten ergab, dass keines das leistet — Behördenportale sind
-auf Zertifizierung zugeschnitten, Vereine auf Aufklärung, Verbände auf ihre Mitglieder,
+Von der Lage über Technik und Erkennung bis zu Betrieb und Ausbildung. Angefangen, weil
+ich beim Suchen nichts gefunden habe, das durchgehend war: Behördenportale sind auf
+Zertifizierung zugeschnitten, Vereine auf Aufklärung, Verbände auf ihre Mitglieder,
 Fachmedien auf Aktualität. Für das IT-Grundschutz-Kompendium gibt es ein deutschsprachiges
-Gegenstück zur NIST-Reihe; für MITRE ATT&CK gibt es keines.
+Gegenstück zur NIST-Reihe; für MITRE ATT&CK nicht.
 
-Die Hausregel:
+Eine Regel hält das Ganze zusammen:
 
 > Nichts steht hier, weil es interessant ist. Es steht hier, weil jemand daran etwas prüfen
 > oder bauen kann.
 
-<p class="privat">Zurzeit als interne Fassung geführt. Eine zeigbare Auswahl ist in
-Vorbereitung.</p>
+<p class="privat">Zurzeit nur intern. Ob und in welcher Form etwas davon zeigbar wird, ist
+offen.</p>
 
-## Sprache
-
-### meaning-layer — was unter der Sprache liegt { #meaning-layer }
+## meaning-layer — was unter der Sprache liegt { #meaning-layer }
 
 **208 Commits, Juni bis September 2026. Clojure.**
 
-Ein Modell mit zwei Schichten: körpernahe **Grundoperationen** als geteiltes Skelett
-(Bild-Schemata nach Johnson und Lakoff) und darüber die sprachspezifischen **Dekoratoren** —
-*fliehen* statt bloss *weg-bewegen*. Die Grammatik wohnt im Dekorator, nie im Kern.
+Zwei Schichten: körpernahe **Grundoperationen** als geteiltes Skelett — Bild-Schemata nach
+Johnson und Lakoff — und darüber sprachspezifische **Dekoratoren**: *fliehen* statt bloss
+*weg-bewegen*. Die Grammatik wohnt im Dekorator, nie im Kern.
 
-Die Bedeutung steckt dabei ausdrücklich nicht im Modell, sondern beim Beobachter: Das
-Modell ist ein Skelett mit Anker, kein Behälter. Jeder Text wird zuerst einsprachig
-modelliert — Homer im Altgriechischen, mit eigener Übersetzung —, und Übersetzbarkeit ist
-nicht Voraussetzung, sondern **Befund**: Greift die Dekorator-Klasse der Zielsprache, was
-die der Quellsprache trägt, oder nicht? Das Nicht-Greifen ist die Messung.
+Die Bedeutung steckt dabei nicht im Modell, sondern beim Leser: Das Modell ist ein Skelett
+mit Anker, kein Behälter. Jeder Text wird zuerst einsprachig modelliert — Homer im
+Altgriechischen, mit eigener Übersetzung. Übersetzbarkeit ist dann nicht Voraussetzung,
+sondern Ergebnis: Greift die Dekorator-Klasse der Zielsprache, was die der Quellsprache
+trägt, oder nicht?
 
-Aus diesem Vorhaben stammt das Verfahren, nach dem ich heute auch alles andere prüfe —
-gefunden an seinem eigenen Scheitern. Mehr dazu unter
-[Mit KI arbeiten](mit-ki-arbeiten.md).
+Ob das Modell trägt, weiss ich nicht. Die erste Fassung trug jedenfalls nicht, und warum,
+steht unter [Mit KI arbeiten](mit-ki-arbeiten.md).
 
-### probanz-werkstatt { #probanz-werkstatt }
+## federation-rt — eine Laufzeit mit Beweisen { #federation-rt }
 
-**21 Commits, Juni bis September 2026.** Offene Forschungswerkstatt zur Vermessung von
-Wirklichkeit im Sprachgebrauch.
+**289 Commits in sieben Tagen, März 2026. OCaml und Rocq.**
 
-## Finanzen und Verwaltung
+Eine Laufzeitumgebung für Container, deren Isolationseigenschaften nicht behauptet, sondern
+in Rocq bewiesen werden. Ein Versuch, ob sich das im Nebenbei überhaupt machen lässt.
 
-### kita-studie — was öffentliche Kinderbetreuung kostet { #kita-studie }
+## probanz-werkstatt { #probanz-werkstatt }
 
-**67 Seiten, rund 211 000 Wörter, 127 Commits — in fünf Tagen, 19. bis 23. September 2026.**
+**21 Commits, Juni bis September 2026.** Eine kleine Werkstatt zur Frage, wie sich geteilte
+Wirklichkeit im Sprachgebrauch messen lässt. Gehört zum meaning-layer.
 
-Eine Untersuchung zur Finanzierbarkeit öffentlich getragener Kitas in einer Schweizer
-Stadt, ausschliesslich aus öffentlich zugänglichen Quellen. 263 geprüfte Quellenadressen,
-6 151 interne Verweise, ein Zahlenregister mit dreissig Selbstprüfungen, die bei jedem Bau
-mitlaufen.
+---
 
-Der methodische Kern ist eine Unterscheidung, die sich auf jede Kostendiskussion
-übertragen lässt: **Divergenz** ist derselbe Wert unter denselben Prämissen, verschieden
-angegeben — ein Fehler. **Lesart** ist derselbe Gegenstand unter verschieden *benennbaren*
-Prämissen — beide bleiben stehen, nebeneinander. Die Studie zwingt sich, jede Lesart als
-solche auszuweisen, statt eine davon zur Wahrheit zu erklären.
-
-<p class="privat">Interne Fassung.</p>
-
-## Das Verbindende
-
-Berechtigungssysteme, Cybersicherheit, altgriechische Semantik und kommunale Finanzen haben
-fachlich nichts miteinander zu tun. Gemeinsam ist ihnen die Bauweise: Eine Behauptung gilt
-erst, wenn eine Maschine sie prüft; jede Verwandlung deklariert eine prüfbare Invariante;
-und ein Mass, das zum Ziel wird, taugt nicht mehr als Mass.
-
-Woher das kommt, steht auf der [nächsten Seite](mit-ki-arbeiten.md).
+Der Code liegt in privaten Repositorien. Im Gespräch zeige ich gern etwas davon — an einem
+Messprotokoll oder an einem Fehler.
