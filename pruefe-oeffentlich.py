@@ -45,6 +45,12 @@ VERBOTEN = [
     ("Verfuegbarkeit", r"(?i)\bverf(ü|ue)gbar\b|ab Januar 20\d\d|"
                        r"\b\d{2}\s?(bis|–|-)\s?\d{2}\s?Prozent\b|\b\d{2}–\d{3}\s?%",
      "Kein Datum, kein Pensum — das gehoert ins Gespraech, nicht ins Netz."),
+    ("Kita-Studie", r"(?i)\bkita\b|Kinderbetreuung",
+     "Ausdruecklich nicht erwaehnen."),
+    ("Lebenslauf-Inhalte", r"(?i)\b(Diplom Physik|Universität Bremen|RPTU|PRINCE2|IREB|"
+                           r"HERMES|SAFe Product Owner|Worldline|BKW|ti&amp;m|"
+                           r"Deutsche Telekom|Visio Consult|Lebenslaufstation)\b",
+     "Die Seite zeigt Projekte, keine Vita — dafuer ist LinkedIn da."),
 ]
 
 # Was ausdruecklich erlaubt ist, obwohl ein Muster greifen koennte.
