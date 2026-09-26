@@ -31,8 +31,13 @@ VERBOTEN = [
                       r"gegenseitigem Einvernehmen|organisatorische Neuausrichtung|"
                       r"Probezeit|Kuendigung|Kündigung",
      "Die eigene Vertragslage ist Sache des Gespraechs, nicht der Startseite."),
-    ("Amt namentlich", r"\bSECO\b|EasyGov|Staatssekretariat für Wirtschaft",
-     "Die aktuelle Stelle steht als «Bundesverwaltung», ohne Amt."),
+    # EasyGov war hier zuerst mitgesperrt. Das war zu grob: Die oeffentliche
+    # Auslegeordnung «EasyGov 2.0» ist eine eigene Studie aus oeffentlich
+    # zugaenglichen Quellen und hat mit dem Arbeitsverhaeltnis nichts zu tun.
+    # Gesperrt bleibt der Arbeitgeber, nicht das Studienthema.
+    ("Arbeitgeber namentlich", r"(?i)\bSECO\b|Staatssekretariat für Wirtschaft|"
+                               r"mein(e|em)? Arbeitgeber",
+     "Das Arbeitsverhaeltnis gehoert nicht auf diese Seite."),
     ("Namen von Ansprechpersonen", r"Hänggi|Haenggi|Ducrey|Nussbaumer|Micic|"
                                    r"Plattner|Felber|Zemp|Bigler|Drews|Thomi|Hoffmann",
      "Keine Namen aus laufenden Verfahren."),

@@ -1,7 +1,7 @@
 site_name: Thorsten Panneck-Conradi
 site_description: >-
-  Projekte aus Plattform, Architektur, Sicherheit und Sprache — und wie sie
-  entstanden sind. Der Lebenslauf steht anderswo.
+  Verweise auf öffentlich zugängliche Arbeiten zu Cybersicherheit, Sprache,
+  Plattform und Verwaltungsdigitalisierung — alle mit einem KI-System entstanden.
 site_url: https://tpanneck.github.io/
 site_author: Thorsten Panneck-Conradi
 copyright: Thorsten Panneck-Conradi · Ittigen bei Bern
@@ -69,5 +69,4 @@ markdown_extensions:
 
 nav:
   - Start: index.md
-  - Projekte: projekte.md
   - Mit KI arbeiten: mit-ki-arbeiten.md
