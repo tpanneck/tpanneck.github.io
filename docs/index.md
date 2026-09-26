@@ -48,11 +48,6 @@ Eine Werkstatt dazu, wie Sprache Welten aufspannt — Wort für Wort.
 Eine Studie zur Schweizer Verwaltungsdigitalisierung, ausschliesslich aus öffentlich
 zugänglichen Quellen.
 
-### [Die Ameisen von morgen](https://tpanneck.github.io/ameisen-von-morgen/)
-
-Ein Buch in Arbeit: Alles, was man für wirklich hält, ist eine Geschichte — und jetzt
-betritt ein neuer Geschichtenerzähler die Bühne.
-
 ## Wie das entstanden ist
 
 Alle verlinkten Arbeiten sind mit einem KI-System gebaut: Thorsten Panneck-Conradi
